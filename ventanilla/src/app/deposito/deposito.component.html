@@ -1,0 +1,17 @@
+<!-- src/app/deposito/deposito.component.html -->
+
+<div id="main">
+  <h2 id="tituloDep">Depósitos</h2>
+  <h2 id="subtDep">Información para el depósito</h2>
+  <label for="numeroCuenta">Ingrese el número de cuenta:</label>
+  <input type="text" id="numeroCuenta" [(ngModel)]="numeroCuenta" required placeholder="Número de cuenta">
+  <button id="validar" type="button" (click)="buscarCliente()">Validar</button>
+</div>
+
+<div *ngIf="clienteEncontrado; else clienteNoEncontrado">
+  <app-pagina-cliente [cliente]="clienteEncontrado" (datosEnviados)="enviarDatos($event)"></app-pagina-cliente>
+</div>
+
+<ng-template #clienteNoEncontrado>
+  <div id="paginaCliente" style="display: none;">Cliente no encontrado. Verifique el número de cuenta.</div>
+</ng-template>

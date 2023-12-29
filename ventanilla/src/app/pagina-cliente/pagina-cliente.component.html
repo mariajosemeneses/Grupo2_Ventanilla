@@ -1,0 +1,21 @@
+
+
+<h2>Datos del Depósito</h2>
+<form id="clienteForm">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" value="{{ cliente.nombre }}" readonly>
+
+  <label for="apellido">Apellido:</label>
+  <input type="text" id="apellido" value="{{ cliente.apellido }}" readonly>
+
+  <label for="tipoCuenta">Tipo Cuenta:</label>
+  <input type="text" id="tipoCuenta" value="{{ cliente.tipoCuenta }}" readonly>
+
+  <label for="nombreDepositante">Nombre del Depositante:</label>
+  <input type="text" id="nombreDepositante" [(ngModel)]="nombreDepositante" placeholder="Ingrese el nombre">
+
+  <label for="montoADepositar">Monto:</label>
+  <input type="text" id="montoADepositar" [(ngModel)]="montoADepositar" placeholder="Ingrese el monto">
+</form>
+<button type="button" (click)="enviarDatos()">Aceptar</button>
+<button type="button" (click)="regresarAMain()">Regresar</button>
